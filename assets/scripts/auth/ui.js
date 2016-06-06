@@ -1,5 +1,6 @@
 'use strict';
 
+const app = require('../app-data');
 
 //currentUser object set on successful sign-in
 let currentUser = {
@@ -34,11 +35,32 @@ const failure = () => {
   console.log('failure');
 };
 
+const showSymptomsSuccess = (data) => {
+  console.log(data);
+};
+
+const showSymptoms = (success, failure) => {
+  $.ajax({
+    method: "GET",
+    url: app.api +'/users/' + currentUser.id +'/symptoms/',
+    dataType: 'json',
+    headers: {
+      Authorization: "Token token=" + currentUser.token
+    },
+    }
+  )
+  .done(success)
+  .fail(failure);
+};
+
+
 module.exports = {
   signUpSuccess,
   signInSuccess,
   changePasswordSuccess,
   signOutSuccess,
   currentUser,
-  failure
+  failure,
+  showSymptoms,
+  showSymptomsSuccess
 };

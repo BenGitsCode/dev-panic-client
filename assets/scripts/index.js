@@ -7,8 +7,8 @@ require('./example');
 // var example = require('./example');
 
 // use require without a reference to ensure a file is bundled
-const authApi = require('./auth/user-api');
-const authUi = require('./auth/user-ui');
+const authApi = require('./auth/api');
+const authUi = require('./auth/ui');
 const getFormFields = require('../../lib/get-form-fields');
 
 $('#sign-up').on('submit', function (event){
@@ -36,3 +36,20 @@ $('#sign-out').on('click', function(event){
   event.preventDefault();
   authApi.signOut(authUi.signOutSuccess, authUi.failure);
 });
+
+
+// SYMPTOM actions
+
+  $('.show-symptoms').on('click', function (event) {
+    event.preventDefault();
+    authUi.showSymptoms(authUi.showSymptomsSuccess, authUi.failure);
+    console.log(authUi.currentUser);
+  });
+
+  $('#new-symptom').on('submit', function (event) {
+    event.preventDefault();
+    let data = getFormFields(this);
+    authApi.newSymptom(authUi.success, authUi.failure, data);
+    console.log(data);
+    // authUi.showSymptom();
+  });

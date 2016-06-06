@@ -7,14 +7,57 @@
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Example</h1>
+      <!--sign-up form-->
+             <div class="sign-up-div">
+               <h2>Sign Up</h2>
+               <form id="sign-up">
+                 <div class="form-group">
+                   <label for="exampleInputEmail1">Email address</label>
+                   <input type="email" class="form-control" id="exampleInputEmail1" name="credentials[email]" placeholder="Email">
+                 </div>
+                 <div class="form-group">
+                   <label for="exampleInputPassword1">Password</label>
+                   <input type="password" class="form-control" id="exampleInputPassword1" name="credentials[password]" placeholder="Password">
+                 </div>
+                 <div class="form-group">
+                   <label for="exampleInputPassword1">Confirm Password</label>
+                   <input type="password" class="form-control" id="exampleInputPassword2" name="credentials[password_confirmation]" placeholder="Password">
+                 </div>
+                 <button type="submit" class="btn btn-default">Submit</button>
+               </form>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+             <!--sign-in form-->
+               <div class="sign-in-div">
+                 <h2>Sign in</h2>
+                 <form id="sign-in">
+                   <div class="form-group">
+                     <label for="exampleInputEmail1">Email address</label>
+                     <input type="email" class="form-control" id="exampleInputEmail1" name="credentials[email]" placeholder="Email">
+                   </div>
+                   <div class="form-group">
+                     <label for="exampleInputPassword1">Password</label>
+                     <input type="password" class="form-control" id="exampleInputPassword1" name="credentials[password]" placeholder="Password">
+                   </div>
+                   <button type="submit" class="btn btn-default">Submit</button>
+                 </form>
+
+                 <!--change pw form-->
+                   <div class="sign-in-div">
+                     <h2>Change pw</h2>
+                     <form id="change-password">
+                       <div class="form-group">
+                         <label for="exampleInputEmail1">Email address</label>
+                         <input type="password" class="form-control" id="exampleInputEmail1" name="pw_creds[old]" placeholder="Email">
+                       </div>
+                       <div class="form-group">
+                         <label for="exampleInputPassword1">Password</label>
+                         <input type="password" class="form-control" id="exampleInputPassword1" name="pw_creds[new]" placeholder="Password">
+                       </div>
+                       <button type="submit" class="btn btn-default">Submit</button>
+                     </form>
+
+                   <!--sign-out -->
+                   <button id="sign-out">Sign out</button>
+
     </body>
 </html>

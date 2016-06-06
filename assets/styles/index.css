@@ -1,3 +1,7 @@
+body {
+  background-image: url('https://s3.amazonaws.com/benjamski/Temp/header-vid-calm.mp4');
+}
+
 /*LANDING PAGE STYLES*/
 .landing-header {
   color: #ffffff;
@@ -40,3 +44,30 @@
     background-image: linear-gradient(to bottom, #325A46, #243C41);
     border-color: transparent;
 }
+
+/* Nifty video background experiment
+======================================*/
+
+/*video {
+	width: 100%;
+  height:100%;
+	position: absolute;
+}*/
+
+/* MEDIA QUERIES FOR MOBILE
+======================================*/
+
+/*media query for still image on mobile instead of video*/
+/*@media screen and (max-device-width: 800px) {
+	body, html {
+		background-image: url(http://i.imgur.com/tKSMTVY.png);
+	}
+  .header-vid {
+       background: url(http://i.imgur.com/tKSMTVY.png) #000 no-repeat center center fixed;
+  }
+
+
+  video {
+      display: none;
+  }
+}*/

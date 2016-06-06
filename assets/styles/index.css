@@ -1,0 +1,42 @@
+/*LANDING PAGE STYLES*/
+.landing-header {
+  color: #ffffff;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+
+.landing-header a {
+  color: #49B388;
+  font-size: 34px;
+}
+
+.intro-message h1 {
+  font-size: 60px;
+  margin-top: 40px;
+}
+
+.intro-message h3 {
+  font-size: 34px;
+}
+
+.list-inline {
+  padding-top: 40px;
+}
+
+
+/*BUTTONS*/
+
+.btn.btn-success {
+    color: #ffffff;
+    background-color: #ffffff;
+    background-image: linear-gradient(to bottom, #325A46, #243C41);
+    border-color: transparent;
+}
+.btn.btn-success:hover {
+    color: #ffffff;
+    background-color: #00eeff;
+    background-image: linear-gradient(to bottom, #325A46, #243C41);
+    border-color: transparent;
+}

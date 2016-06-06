@@ -35,6 +35,10 @@ const signOutSuccess = () => {
   console.log('See YA signed out');
 };
 
+const newSymptomSuccess = (data) => {
+  console.log('New Symptom Added');
+  $('#new-symptom-modal').modal('hide');
+};
 
 const failure = () => {
   console.log('failure');
@@ -67,5 +71,6 @@ module.exports = {
   currentUser,
   failure,
   showSymptoms,
-  showSymptomsSuccess
+  showSymptomsSuccess,
+  newSymptomSuccess
 };

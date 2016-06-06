@@ -49,7 +49,6 @@ $('#sign-out').on('click', function(event){
   $('#new-symptom').on('submit', function (event) {
     event.preventDefault();
     let data = getFormFields(this);
-    authApi.newSymptom(authUi.success, authUi.failure, data);
+    authApi.newSymptom(authUi.newSymptomSuccess, authUi.failure, data);
     console.log(data);
-    // authUi.showSymptom();
   });

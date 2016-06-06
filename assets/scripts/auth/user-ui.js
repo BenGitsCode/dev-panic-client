@@ -9,14 +9,14 @@ let currentUser = {
 };
 
 const signUpSuccess = () => {
-  console.log('signed-up');
+  console.log('You signed-up');
 };
 
 const signInSuccess = (data) => {
   currentUser.token = data.user.token;
   currentUser.id = data.user.id;
   currentUser.username = data.user.username;
-  console.log('signed-in');
+  console.log('You signed-in');
 };
 
 const changePasswordSuccess = () => {
@@ -26,7 +26,7 @@ const changePasswordSuccess = () => {
 const signOutSuccess = () => {
   currentUser.token = '';
   currentUser.id = undefined;
-  console.log('signed out');
+  console.log('See YA signed out');
 };
 
 

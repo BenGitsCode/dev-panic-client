@@ -1,7 +1,6 @@
 <h2>
 
-{{#each symptom}}
-  {{#each solution}}
-  {{/each}}
-{{/each}}
+{{#with symptom as |mysymptom|}}
+  {{mysymptom.solution}}
+{{/with}}
 </h2>

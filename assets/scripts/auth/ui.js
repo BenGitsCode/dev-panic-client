@@ -62,6 +62,11 @@ const showSymptoms = (success, failure) => {
   .fail(failure);
 };
 
+const getSolutionsSuccess = (data) => {
+  console.log(data);
+};
+
+
 
 module.exports = {
   signUpSuccess,
@@ -72,5 +77,6 @@ module.exports = {
   failure,
   showSymptoms,
   showSymptomsSuccess,
-  newSymptomSuccess
+  newSymptomSuccess,
+  getSolutionsSuccess
 };

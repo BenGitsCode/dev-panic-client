@@ -56,6 +56,6 @@ $('#sign-out').on('click', function(event){
   $('#symptom-drop').on('submit', function (event) {
     event.preventDefault();
     let title = $('#symptom-select option:selected').text();
-    debugger;
+    authApi.getSolutions(authUi.getSolutionsSuccess, authUi.failure, title);
     console.log(title);
   });

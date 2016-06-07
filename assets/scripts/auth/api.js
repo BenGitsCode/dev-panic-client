@@ -110,6 +110,23 @@ const deleteSymptom = (success, failure, data, id) => {
   .fail(failure);
 };
 
+const getSolutions = (success, failure, data) => {
+  $.ajax({
+    method: "POST",
+    url: app.api +'/get-solutions/',
+    dataType: 'json',
+    headers: {
+      Authorization: "Token token=" + ui.currentUser.token
+    },
+    data: {
+      "symptom": {
+        "title": data
+      }
+    }
+  })
+  .done(success)
+  .fail(failure);
+};
 
 
 module.exports = {
@@ -119,5 +136,6 @@ module.exports = {
   signOut,
   editSymptom,
   deleteSymptom,
-  newSymptom
+  newSymptom,
+  getSolutions
 };

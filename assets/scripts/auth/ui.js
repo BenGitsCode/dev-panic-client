@@ -1,6 +1,7 @@
 'use strict';
 
 const app = require('../app-data');
+const display = require('../display.js');
 
 //currentUser object set on successful sign-in
 let currentUser = {
@@ -51,7 +52,8 @@ const showSymptomsSuccess = (data) => {
 
 const getSolutionsSuccess = (data) => {
   let solutionData = data;
-  return solutionData;
+  console.log(solutionData);
+  display.displaySolutions(solutionData);
 };
 
 const showSymptoms = (success, failure) => {

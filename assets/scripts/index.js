@@ -52,3 +52,9 @@ $('#sign-out').on('click', function(event){
     authApi.newSymptom(authUi.newSymptomSuccess, authUi.failure, data);
     console.log(data);
   });
+
+  $('#symptom-drop').on('submit', function (event) {
+    event.preventDefault();
+    let title = $('#symptom-select option:selected').text();
+    console.log(title);
+  });

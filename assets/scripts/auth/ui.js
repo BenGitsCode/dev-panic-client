@@ -64,6 +64,7 @@ const showSymptoms = (success, failure) => {
 
 const getSolutionsSuccess = (data) => {
   let solutionData = data;
+  return solutionData;
 };
 
 

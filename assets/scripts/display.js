@@ -6,7 +6,7 @@ let displaySolutions = function(solutions){
     // $('.show-solutions').html(''); //this clears the content in my table html
   let solutionsListingTemplate = require('./templates/show-solutions.handlebars');
     $('.show-solutions').append(solutionsListingTemplate({
-      solutions : solutions.symptom.solution
+      symptom : solutions.symptom
     }));
 };
 

@@ -48,6 +48,12 @@ const showSymptomsSuccess = (data) => {
   console.log(data);
 };
 
+
+const getSolutionsSuccess = (data) => {
+  let solutionData = data;
+  return solutionData;
+};
+
 const showSymptoms = (success, failure) => {
   $.ajax({
     method: "GET",
@@ -56,17 +62,25 @@ const showSymptoms = (success, failure) => {
     headers: {
       Authorization: "Token token=" + currentUser.token
     },
-    }
-  )
-  .done(success)
-  .fail(failure);
+  }
+)
+.done(success)
+.fail(failure);
 };
 
-const getSolutionsSuccess = (data) => {
-  let solutionData = data;
-  return solutionData;
+const showSymptoms = (success, failure) => {
+  $.ajax({
+    method: "GET",
+    url: app.api +'/users/' + currentUser.id +'/symptoms/',
+    dataType: 'json',
+    headers: {
+      Authorization: "Token token=" + currentUser.token
+    },
+  }
+)
+.done(success)
+.fail(failure);
 };
-
 
 
 module.exports = {

@@ -1,15 +1,16 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 @import url(https://fonts.googleapis.com/css?family=Quattrocento);
+@import 'colors';
 
 
 body, html {
-  background-image: url('https://s3.amazonaws.com/benjamski/Temp/header-vid-calm.mp4');
+  //background-image: url('https://s3.amazonaws.com/benjamski/Temp/header-vid-calm.mp4');
 }
 
 /*LANDING PAGE STYLES*/
 .landing-header {
-  color: #ffffff;
+  color: $downriver;
   padding-top: 50px;
   padding-bottom: 50px;
   text-align: center;
@@ -17,7 +18,7 @@ body, html {
 
 
 .landing-header a {
-  color: #49B388;
+  color: $turquoise;
   font-size: 34px;
   font-family: 'Quattrocento', serif;
 }
@@ -41,14 +42,14 @@ body, html {
 /*BUTTONS*/
 
 .btn.btn-success {
-    color: #ffffff;
-    background-color: #ffffff;
+    color: $white;
+    background-color: $white;
     background-image: linear-gradient(to bottom, #325A46, #243C41);
     border-color: transparent;
 }
 .btn.btn-success:hover {
-    color: #ffffff;
-    background-color: #00eeff;
+    color: $white;
+    background-color: $turquoise;
     background-image: linear-gradient(to bottom, #325A46, #243C41);
     border-color: transparent;
 }
@@ -57,13 +58,18 @@ body, html {
 ======================================*/
 
 .navbar {
-  background-color: transparent;
+  background-color: black;
 }
 
 .navbar-brand {
   font-size: 30px;
   font-weight: 600;
-  color: #A5AEB1;
+  color: #114381;
+}
+
+.choose-solutions{
+  width: 100%;
+  margin: 0 30%;
 }
 
 /* Nifty video background experiment

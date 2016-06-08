@@ -19,10 +19,6 @@ const signInSuccess = (data) => {
   currentUser.id = data.user.id;
   console.log('You signed-in');
   $('#sign-in-modal').modal('hide');
-  console.log("Sign in successful");
-  $('.page-content').removeClass('hidden');
-  $('.landing-header').addClass('hidden');
-  $('body').removeClass('bg-image');
 };
 
 const changePasswordSuccess = () => {

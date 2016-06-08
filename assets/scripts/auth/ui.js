@@ -17,7 +17,6 @@ const signUpSuccess = () => {
 const signInSuccess = (data) => {
   currentUser.token = data.user.token;
   currentUser.id = data.user.id;
-  currentUser.username = data.user.username;
   console.log('You signed-in');
   $('#sign-in-modal').modal('hide');
   console.log("Sign in successful");

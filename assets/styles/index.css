@@ -14,15 +14,18 @@ body, html {
 .landing-header a {
   color: #49B388;
   font-size: 34px;
+  font-family: 'Quattrocento', serif;
 }
 
 .intro-message h1 {
   font-size: 60px;
   margin-top: 40px;
+  font-family: 'Quattrocento', serif;
 }
 
 .intro-message h3 {
   font-size: 34px;
+  font-family: 'Quattrocento', serif;
 }
 
 .list-inline {

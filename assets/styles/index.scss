@@ -1,3 +1,94 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 @import url(https://fonts.googleapis.com/css?family=Quattrocento);
+
+
+body, html {
+  background-image: url('https://s3.amazonaws.com/benjamski/Temp/header-vid-calm.mp4');
+}
+
+/*LANDING PAGE STYLES*/
+.landing-header {
+  color: #ffffff;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+
+.landing-header a {
+  color: #49B388;
+  font-size: 34px;
+  font-family: 'Quattrocento', serif;
+}
+
+.intro-message h1 {
+  font-size: 60px;
+  margin-top: 40px;
+  font-family: 'Quattrocento', serif;
+}
+
+.intro-message h3 {
+  font-size: 34px;
+  font-family: 'Quattrocento', serif;
+}
+
+.list-inline {
+  padding-top: 40px;
+}
+
+
+/*BUTTONS*/
+
+.btn.btn-success {
+    color: #ffffff;
+    background-color: #ffffff;
+    background-image: linear-gradient(to bottom, #325A46, #243C41);
+    border-color: transparent;
+}
+.btn.btn-success:hover {
+    color: #ffffff;
+    background-color: #00eeff;
+    background-image: linear-gradient(to bottom, #325A46, #243C41);
+    border-color: transparent;
+}
+
+/* NavBar
+======================================*/
+
+.navbar {
+  background-color: transparent;
+}
+
+.navbar-brand {
+  font-size: 30px;
+  font-weight: 600;
+  color: #A5AEB1;
+}
+
+/* Nifty video background experiment
+======================================*/
+
+/*video {
+	width: 100%;
+  height:100%;
+	position: absolute;
+}*/
+
+/* MEDIA QUERIES FOR MOBILE
+======================================*/
+
+/*media query for still image on mobile instead of video*/
+/*@media screen and (max-device-width: 800px) {
+	body, html {
+		background-image: url(http://i.imgur.com/tKSMTVY.png);
+	}
+  .header-vid {
+       background: url(http://i.imgur.com/tKSMTVY.png) #000 no-repeat center center fixed;
+  }
+
+
+  video {
+      display: none;
+  }
+}*/

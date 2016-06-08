@@ -28,22 +28,18 @@ const signIn = (success, failure, data) => {
 };
 
 const changePassword = (success, failure, data) => {
+  // if (!app.currentUser) bad;
   $.ajax({
     method: "PATCH",
     url: app.api + '/change-password/' + ui.currentUser.id,
-    data: {
-      'passwords': {
-        'old': data.pw_creds.old,
-        'new': data.pw_creds.new
-      }
-    },
+    data,
     headers: {
-      contentType: "application.json",
-      Authorization: "Token token=" + ui.currentUser.token
+      Authorization: 'Token token='+ ui.currentUser.token,
     },
-  }).done(success)
-  .fail(failure);
-};
+  })
+  .done(success)
+   .fail(failure);
+  };
 
 const signOut = (success, failure) => {
   $.ajax({

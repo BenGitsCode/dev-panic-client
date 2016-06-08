@@ -51,7 +51,7 @@ const showSymptomsSuccess = (data) => {
 
 
 const getSolutionsSuccess = (data) => {
-  let solutionData = data;
+  let solutionData = data.symptoms;
   console.log(solutionData);
   display.displaySolutions(solutionData);
 };

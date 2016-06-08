@@ -1,6 +1,6 @@
 <h2>
 
-{{#with symptom as |mysymptom|}}
-  {{mysymptom.solution}}
-{{/with}}
+{{#each solutions}}
+      {{this.solution}}
+{{/each}}
 </h2>

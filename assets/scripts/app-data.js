@@ -4,4 +4,13 @@ const app = {
   api:'https://dev-panic.herokuapp.com',
   };
 
-module.exports = app;
+  let currentUser = {
+    token:'',
+    id: undefined,
+    username: undefined
+  };
+
+module.exports = {
+  app,
+  currentUser
+};

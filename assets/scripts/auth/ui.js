@@ -13,6 +13,10 @@ let currentUser = {
 
 // USER CRUD SUCCESSES
 
+const success = (data) => {
+  console.log(data);
+};
+
 // SIGNUP SUCCESSES
 
 const signUpSuccess = () => {
@@ -47,10 +51,17 @@ const changePasswordSuccess = () => {
   console.log('changed password');
 };
 
+const changePasswordFailure = (error) => {
+  console.error(error);
+  $('#change-password-modal').modal('hide');
+  $('#change-password-fail-modal').modal('show');
+};
+
 const signOutSuccess = () => {
   currentUser.token = '';
   currentUser.id = undefined;
   console.log('See YA signed out');
+  $('#sign-out-modal').modal('hide');
 };
 
 // SYMPTOMS AND SOLUTIONS
@@ -94,12 +105,11 @@ const showSymptoms = (success, failure) => {
 module.exports = {
   signUpSuccess,
   signInSuccess,
-  changePasswordSuccess,
   signOutSuccess,
   currentUser,
   success,
-  changePwSuccess,
-  changePwFailure,
+  changePasswordSuccess,
+  changePasswordFailure,
   signUpFailure,
   signInFailure,
   failure,

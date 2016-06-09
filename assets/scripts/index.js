@@ -67,7 +67,7 @@ $('#sign-out').on('click', function(event){
   let id = $('.edit-symptom-btn').attr("data-symptom-id");
   let data = getFormFields(this);
   console.log(data);
-  authApi.editSympton(authUi.editSymptomSuccess, authUi.failure, data, id);
+  authApi.editSymptom(authUi.editSymptomSuccess, authUi.failure, data, id);
 });
 
   $('.content').on('click', '.edit-symptom', function (event) {

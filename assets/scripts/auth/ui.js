@@ -13,6 +13,7 @@ let currentUser = {
 // USER CRUD SUCCESSES
 const signUpSuccess = () => {
   console.log('You signed-up');
+  $('#sign-up-modal').modal('hide');
 };
 
 const signInSuccess = (data) => {

@@ -10,70 +10,72 @@
     </head>
     <body class="container-fluid">
       <!-- Navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-          </button>
-          <a class="navbar-brand" href="#">Developer Panic</a>
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+            </button>
+            <a class="navbar-brand" href="#">Developer Panic</a>
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="myaccount-dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#" data-toggle="modal" data-target="#change-password-modal">Change Password</a></li>
+                  <li><a href="#" data-toggle="modal" data-target="#sign-out-modal">Sign Out</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="myaccount-dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#" data-toggle="modal" data-target="#change-password-modal">Change Password</a></li>
-                <li><a href="#" data-toggle="modal" data-target="#sign-out-modal">Sign Out</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <!-- End Navbar -->
-      <!-- Landing Header -->
-       <div class="landing-header">
-           <div class="container">
+      </nav>
+      <!-- End Navbar -->
+        <!-- Landing Header -->
+         <div class="landing-header">
+             <div class="container">
 
-               <div class="row">
-                   <div class="col-lg-12">
-                       <div class="intro-message">
-                           <h1>Welcome to DevPanic</h1>
-                           <h3>For when you're at sanity's edge</h3>
-                           <ul class="list-inline intro-social-buttons">
-                               <li>
-                                  <button class="btn btn-success" <a href="#" data-toggle="modal" data-target="#sign-in-modal">Sign In</a></button>
-                               </li>
-                           </ul>
+                 <div class="row">
+                     <div class="col-lg-12">
+                         <div class="intro-message">
+                             <h1>Welcome to DevPanic</h1>
+                             <h3>For when you're at sanity's edge</h3>
+                             <ul class="list-inline intro-social-buttons">
+                                 <li>
+                                    <button class="btn btn-success" <a href="#" data-toggle="modal" data-target="#sign-in-modal">Sign In</a></button>
+                                 </li>
+                             </ul>
+                         </div>
+                     </div>
+                 </div>
+
+             </div>
+         </div>
+         <div class="main-page hidden">
+         </div>
+
+
+                       <!-- END Landing Header -->
+
+                       <!--VIDEO TEST LATER
+                       <div class="header-vid">
+                        <vid>
+                        <video autoplay poster="http://i.imgur.com/tKSMTVY.png" id="bgvid" loop >
+                         <source src="https://s3.amazonaws.com/benjamski/Temp/header-vid-calm.webm" type="video/webm">
+                          <source src="https://s3.amazonaws.com/benjamski/Temp/header-vid-calm.mp4" type="video/mp4">
+                          </vid>
                        </div>
-                   </div>
-               </div>
 
-           </div>
-       </div>
-
-
-       <!-- END Landing Header -->
-
-       <!--VIDEO TEST LATER
-       <div class="header-vid">
-        <vid>
-        <video autoplay poster="http://i.imgur.com/tKSMTVY.png" id="bgvid" loop >
-         <source src="https://s3.amazonaws.com/benjamski/Temp/header-vid-calm.webm" type="video/webm">
-          <source src="https://s3.amazonaws.com/benjamski/Temp/header-vid-calm.mp4" type="video/mp4">
-          </vid>
-       </div>
-
-     VIDEO TEMP COMMENTED OUT-->
+                     VIDEO TEMP COMMENTED OUT-->
 
 
 
-       <!-- New Symptom Button trigger modal -->
-       <div class="choose-solutions">
-       <button type="button" class=".new-symptom" data-toggle="modal" data-target="#new-symptom-modal">
-         Add your Symptom
-       </button>
+                <!-- New Symptom Button trigger modal -->
+               <div class="choose-solutions">
+               <button type="button" class=".new-symptom" data-toggle="modal" data-target="#new-symptom-modal">
+                 Add your Symptom
+               </button>
 
 
                    <!--CHOOSE SYMPTOMS DROPDOWN-->

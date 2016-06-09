@@ -28,6 +28,8 @@ const signInSuccess = (data) => {
   app.currentUser.id = data.user.id;
   console.log('You signed-in');
   $('#sign-in-modal').modal('hide');
+  $('.landing-header').addClass('hidden');
+  $('.main-page').removeClass('hidden');
 };
 
 const signInFailure = (error) => {

@@ -2,6 +2,14 @@ body, html {
   background-image: url('https://s3.amazonaws.com/benjamski/Temp/header-vid-calm.mp4');
 }
 
+/*Main Page*/
+.main-page {
+  color: #ffffff;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
 /*LANDING PAGE STYLES*/
 .landing-header {
   color: #ffffff;

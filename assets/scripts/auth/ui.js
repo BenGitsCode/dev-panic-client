@@ -73,6 +73,7 @@ const signOutSuccess = () => {
   app.currentUser.id = null;
   console.log('See YA signed out');
   $('#sign-out-modal').modal('hide');
+  $('.landing-header').removeClass('hidden');
 };
 
 // SYMPTOMS AND SOLUTIONS

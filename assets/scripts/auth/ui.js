@@ -1,7 +1,8 @@
 'use strict';
 
 const app = require('../app-data');
-const display = require('../display.js');
+const display = require('../display');
+const authApi = require('./ui');
 
 //currentUser object set on successful sign-in
 let currentUser = {
@@ -11,16 +12,35 @@ let currentUser = {
 };
 
 // USER CRUD SUCCESSES
+
+// SIGNUP SUCCESSES
+
 const signUpSuccess = () => {
   console.log('You signed-up');
   $('#sign-up-modal').modal('hide');
+  authApi.signIn(signInSuccess, signInFailure, app.server.signUpData);
 };
+
+const signUpFailure = (error) => {
+  console.error(error);
+  $('#sign-up-modal').modal('hide');
+  $('#sign-up-fail-modal').modal('show');
+};
+
+// SIGN IN SUCCESSES
 
 const signInSuccess = (data) => {
   currentUser.token = data.user.token;
   currentUser.id = data.user.id;
   console.log('You signed-in');
   $('#sign-in-modal').modal('hide');
+};
+
+const signInFailure = (error) => {
+  console.error(error);
+  $('#sign-in-modal').modal('hide');
+  $('#sign-in-fail-modal').modal('show');
+
 };
 
 const changePasswordSuccess = () => {
@@ -77,6 +97,11 @@ module.exports = {
   changePasswordSuccess,
   signOutSuccess,
   currentUser,
+  success,
+  changePwSuccess,
+  changePwFailure,
+  signUpFailure,
+  signInFailure,
   failure,
   showSymptoms,
   showSymptomsSuccess,

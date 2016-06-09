@@ -54,9 +54,28 @@ $('#sign-out').on('click', function(event){
     console.log(data);
   });
 
+  // sets the title to be called from API
   $('#symptom-drop').on('submit', function (event) {
     event.preventDefault();
     let title = $('#symptom-select option:selected').text();
     authApi.getSolutions(authUi.getSolutionsSuccess, authUi.failure, title);
     console.log(title);
   });
+
+  $('#edit-symptom').on('submit', function (event) {
+  event.preventDefault();
+  let id = $('.edit-symptom-btn').attr("data-symptom-id");
+  let data = getFormFields(this);
+  console.log(data);
+  authApi.editSympton(authUi.editSymptomSuccess, authUi.failure, data, id);
+});
+
+  $('.content').on('click', '.edit-symptom', function (event) {
+  // 'button' would also work, this is targeting the button with edit-symptom class
+  event.preventDefault();
+  console.log($(this).attr('data-symptom-id'));
+  let id = $(event.target).attr("data-symptom-id");
+  $('.edit-symptom-btn').attr("data-symptom-id", id);
+  // lines 72-73 define id as the attribute of clicked td
+  // console.log(event.target);
+});

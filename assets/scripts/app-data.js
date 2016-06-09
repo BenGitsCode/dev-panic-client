@@ -2,7 +2,7 @@
 
 //
 const server = {
-  api:'https://dev-panic.herokuapp.com/',
+  api:'https://dev-panic.herokuapp.com',
   };
 
   let currentUser = {

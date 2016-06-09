@@ -1,9 +1,7 @@
 <h2>Solutions</h2>
 
 {{#each solutions}}
-<ul>
-<li>{{this.solution}}</li>
+<li>{{this.solution}}
 <button type="button"  class="btn btn-primary edit-symptom" data-symptom-id="{{id}}" data-toggle="modal" data-target="#edit-symptom-modal">Update</button>
 </li>
-</ul>
 {{/each}}

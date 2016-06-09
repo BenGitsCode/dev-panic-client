@@ -22,17 +22,17 @@ let displaySolutions = function(solutions){
         authApi.editSolution(authUi.editSolutionSuccess, authUi.failure, newSolution, solutionId);
       });
     });
-    $('.delete-solution-btn').on('click', function (event) {
-      event.preventDefault();
-      $('.delete-solution-modal').modal('show');
-      let solutionId = $(this).data('id');
-      $('#delete-symptom').on('submit', function(event) {
-        event.preventDefault();
-        let newSolution = getFormFields(this);
-        $('.delete-solution-modal').modal('hide');
-        authApi.editSolution(authUi.editSolutionSuccess, authUi.failure, newSolution, solutionId);
-      });
-    });
+    // $('.delete-solution-btn').on('click', function (event) {
+    //   event.preventDefault();
+    //   $('.delete-solution-modal').modal('show');
+    //   let solutionId = $(this).data('id');
+    //   $('#delete-symptom').on('submit', function(event) {
+    //     event.preventDefault();
+    //     let newSolution = getFormFields(this);
+    //     $('.delete-solution-modal').modal('hide');
+    //     authApi.editSolution(authUi.editSolutionSuccess, authUi.failure, newSolution, solutionId);
+    //   });
+    // });
 };
 
 

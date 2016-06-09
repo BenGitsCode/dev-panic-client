@@ -43,6 +43,8 @@ const signUpSuccess = () => {
   authApi.signIn(signInSuccess, signInFailure, app.server.signUpData);
 };
 
+// Line 43 ensures Auto Sign In on successful signup
+
 const signUpFailure = (error) => {
   console.error(error);
   $('#sign-up-modal').modal('hide');

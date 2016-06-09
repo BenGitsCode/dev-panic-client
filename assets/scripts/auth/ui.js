@@ -2,7 +2,8 @@
 
 const app = require('../app-data');
 const display = require('../display');
-const authApi = require('./ui');
+const authApi = require('./api');
+const server = require('../app-data');
 
 //currentUser object set on successful sign-in
 let currentUser = {
@@ -19,6 +20,23 @@ const success = (data) => {
 
 // SIGNUP SUCCESSES
 
+
+// SIGN IN SUCCESSES
+
+const signInSuccess = (data) => {
+  app.currentUser.token = data.user.token;
+  app.currentUser.id = data.user.id;
+  console.log('You signed-in');
+  $('#sign-in-modal').modal('hide');
+};
+
+const signInFailure = (error) => {
+  console.error(error);
+  $('#sign-in-modal').modal('hide');
+  $('#sign-in-fail-modal').modal('show');
+
+};
+
 const signUpSuccess = () => {
   console.log('You signed-up');
   $('#sign-up-modal').modal('hide');
@@ -31,35 +49,24 @@ const signUpFailure = (error) => {
   $('#sign-up-fail-modal').modal('show');
 };
 
-// SIGN IN SUCCESSES
-
-const signInSuccess = (data) => {
-  currentUser.token = data.user.token;
-  currentUser.id = data.user.id;
-  console.log('You signed-in');
-  $('#sign-in-modal').modal('hide');
+const changePwSuccess = () => {
+  console.log("Password change successful!");
+  $('#change-password-modal').modal('hide');
+  $('#change-password').each(function() {
+    this.reset();
+    //THIS needs to change to hide in BS
+  });
 };
 
-const signInFailure = (error) => {
-  console.error(error);
-  $('#sign-in-modal').modal('hide');
-  $('#sign-in-fail-modal').modal('show');
-
-};
-
-const changePasswordSuccess = () => {
-  console.log('changed password');
-};
-
-const changePasswordFailure = (error) => {
+const changePwFailure = (error) => {
   console.error(error);
   $('#change-password-modal').modal('hide');
   $('#change-password-fail-modal').modal('show');
 };
 
 const signOutSuccess = () => {
-  currentUser.token = '';
-  currentUser.id = undefined;
+  app.currentUser.token = null;
+  app.currentUser.id = null;
   console.log('See YA signed out');
   $('#sign-out-modal').modal('hide');
 };
@@ -90,7 +97,7 @@ const getSolutionsSuccess = (data) => {
 const showSymptoms = (success, failure) => {
   $.ajax({
     method: "GET",
-    url: app.api +'/users/' + currentUser.id +'/symptoms/',
+    url: server.api +'/users/' + currentUser.id +'/symptoms/',
     dataType: 'json',
     headers: {
       Authorization: "Token token=" + currentUser.token
@@ -108,8 +115,8 @@ module.exports = {
   signOutSuccess,
   currentUser,
   success,
-  changePasswordSuccess,
-  changePasswordFailure,
+  changePwSuccess,
+  changePwFailure,
   signUpFailure,
   signInFailure,
   failure,

@@ -1,7 +1,6 @@
 'use strict';
 
 const app = require('../app-data');
-const ui = require('./ui');
 
 
 //User CRUD
@@ -9,7 +8,7 @@ const signUp = (success, failure, data) => {
   console.log("API", data);
   $.ajax({
     method: "POST",
-    url: app.api + '/sign-up/',
+    url: app.server.api + '/sign-up/',
     data,
   })
   .done(success, data)
@@ -20,7 +19,7 @@ const signIn = (success, failure, data) => {
   console.log("API", data);
   $.ajax({
     method: "POST",
-    url: app.api + '/sign-in/',
+    url: app.server.api + '/sign-in/',
     data,
   })
   .done(success, data)
@@ -31,10 +30,10 @@ const changePassword = (success, failure, data) => {
   // if (!app.currentUser) bad;
   $.ajax({
     method: "PATCH",
-    url: app.api + '/change-password/' + ui.currentUser.id,
+    url: app.server.api + '/change-password/' + app.currentUser.id,
     data,
     headers: {
-      Authorization: 'Token token='+ ui.currentUser.token,
+      Authorization: 'Token token='+ app.currentUser.token,
     },
   })
   .done(success)
@@ -44,9 +43,9 @@ const changePassword = (success, failure, data) => {
 const signOut = (success, failure) => {
   $.ajax({
     method: "DELETE",
-    url: app.api + '/sign-out/' + ui.currentUser.id,
+    url: app.server.api + '/sign-out/' + app.currentUser.id,
     headers: {
-      Authorization: 'Token token=' + ui.currentUser.token
+      Authorization: 'Token token=' + app.currentUser.token
     },
   }).done(success)
   .fail(failure);
@@ -57,10 +56,10 @@ const signOut = (success, failure) => {
 const newSymptom = (success, failure, data) => {
   $.ajax({
     method: "POST",
-    url: app.api +'/users/' + ui.currentUser.id +'/symptoms/',
+    url: app.server.api +'/users/' + app.currentUser.id +'/symptoms/',
     dataType: 'json',
     headers: {
-      Authorization: "Token token=" + ui.currentUser.token
+      Authorization: "Token token=" + app.currentUser.token
     },
     data: {
       "symptom": {
@@ -83,10 +82,10 @@ const editSymptom = (success, failure, data, id) => {
   console.log(data, id);
   $.ajax({
     method: 'PATCH',
-    url: app.api + '/symptoms/' + id,
+    url: app.server.api + '/symptoms/' + id,
     data,
     headers:{
-      Authorization: "Token token=" + ui.currentUser.token,
+      Authorization: "Token token=" + app.currentUser.token,
     },
   }).done(success)
   .fail(failure);
@@ -97,10 +96,10 @@ const deleteSymptom = (success, failure, data, id) => {
   console.log(data, id);
   $.ajax({
     method: 'DELETE',
-    url: app.api + '/symptoms/' + id,
+    url: app.server.api + '/symptoms/' + id,
     data,
     headers:{
-      Authorization: "Token token=" + ui.currentUser.token,
+      Authorization: "Token token=" + app.currentUser.token,
     },
   }).done(success)
   .fail(failure);
@@ -109,10 +108,10 @@ const deleteSymptom = (success, failure, data, id) => {
 const getSolutions = (success, failure, data) => {
   $.ajax({
     method: "POST",
-    url: app.api +'/get-solutions/',
+    url: app.server.api +'/get-solutions/',
     dataType: 'json',
     headers: {
-      Authorization: "Token token=" + ui.currentUser.token
+      Authorization: "Token token=" + app.currentUser.token
     },
     data: {
       "symptom": {

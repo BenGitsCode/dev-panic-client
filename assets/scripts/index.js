@@ -1,35 +1,36 @@
 'use strict';
 
 require('./example');
-
+const authApi = require('./auth/api');
+const authUi = require('./auth/ui');
+const getFormFields = require('../../lib/get-form-fields');
+const app = require('./app-data');
 
 // user require with a reference to bundle the file and use it in this file
 // var example = require('./example');
 
 // use require without a reference to ensure a file is bundled
-const authApi = require('./auth/api');
-const authUi = require('./auth/ui');
-const getFormFields = require('../../lib/get-form-fields');
 
 $('#sign-up').on('submit', function (event){
+  event.preventDefault();
   let data = getFormFields(this);
   console.log(data, 'sign-up submitted');
-  event.preventDefault();
-  authApi.signUp(authUi.signUpSuccess, authUi.failure, data);
+  app.server.signUpData = getFormFields(this);
+  authApi.signUp(authUi.signUpSuccess, authUi.SignUpFailure, data);
 });
 
 $('#sign-in').on('submit', function (event){
   let data = getFormFields(this);
   console.log(data, 'sign-in submitted');
   event.preventDefault();
-  authApi.signIn(authUi.signInSuccess, authUi.failure, data);
+  authApi.signIn(authUi.signInSuccess, authUi.signInFailure, data);
 });
 
 $('#change-password').on('submit', function(event){
   let data = getFormFields(this);
   console.log('change password submitted');
   event.preventDefault();
-  authApi.changePassword(authUi.changePasswordSuccess, authUi.failure, data);
+  authApi.changePassword(authUi.changePwSuccess, authUi.changePwFailure, data);
 });
 
 $('#sign-out').on('click', function(event){

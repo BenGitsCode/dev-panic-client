@@ -1,16 +1,15 @@
 'use strict';
 
-const app = {
+const server = {
   api:'https://dev-panic.herokuapp.com',
   };
 
   let currentUser = {
     token:'',
     id: undefined,
-    username: undefined
   };
 
 module.exports = {
-  app,
+  server,
   currentUser
 };

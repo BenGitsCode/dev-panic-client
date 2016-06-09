@@ -92,8 +92,8 @@ const showSymptomsSuccess = (data) => {
   console.log(data);
 };
 
-const editSymptomSuccess = (data) => {
-  console.log(data);
+const editSolutionSuccess = () => {
+  console.log("edited success");
 };
 
 const deleteSymptomSuccess = (data) => {
@@ -137,6 +137,6 @@ module.exports = {
   showSymptomsSuccess,
   newSymptomSuccess,
   getSolutionsSuccess,
-  editSymptomSuccess,
+  editSolutionSuccess,
   deleteSymptomSuccess
 };

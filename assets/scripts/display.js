@@ -1,5 +1,8 @@
 'use strict';
 
+const authApi = require('./auth/api');
+const authUi = require('./auth/ui');
+
 let displaySolutions = function(solutions){
   console.log(solutions);
     // $('.landing-div').hide(); //this hides the landing page div
@@ -8,22 +11,24 @@ let displaySolutions = function(solutions){
     $('.show-solutions').append(solutionsListingTemplate({
       solutions : solutions
     }));
-};
+    $('.edit-solution-btn').on('click', function (event) {
+      event.preventDefault();
+      $('.edit-solution-modal').modal('show');
+      let solutionId = $(this).data('id');
+      $('#edit-symptom').on('submit', function(event) {
+        event.preventDefault();
+        let newSolution = getFormFields(this);
+        $('.edit-solution-modal').modal('hide');
+        authApi.editSolution(authUi.editSolutionSuccess, authUi.failure, newSolution, solutionId);
+      });
+    });
+  };
 
-// let displayUserSymptoms = function(solutions){
-//   console.log(solutions);
-//     // $('.landing-div').hide(); //this hides the landing page div
-//     // $('.show-solutions').html(''); //this clears the content in my table html
-//   let solutionsListingTemplate = require('./templates/show-user-symptom.handlebars');
-//     $('.show-user-symptom').append(solutionsListingTemplate({
-//       symptom : solutions.symptom
-//     }));
-// };
+
 
 
 
 
 module.exports = {
   displaySolutions,
-  // displayUserSymptoms
 };

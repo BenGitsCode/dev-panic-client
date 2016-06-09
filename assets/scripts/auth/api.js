@@ -78,15 +78,19 @@ const newSymptom = (success, failure, data) => {
 
 
 //Update Symptoms
-const editSymptom = (success, failure, data, id) => {
+const editSolution = (success, failure, data, id) => {
   console.log(data, id);
   $.ajax({
     method: 'PATCH',
     url: app.server.api + '/symptoms/' + id,
-    data,
+    data: {
+      "symptom": {
+      "solution": data.symptom.solution
+    }
+  },
     headers:{
       Authorization: "Token token=" + app.currentUser.token,
-    },
+    }
   }).done(success)
   .fail(failure);
 };
@@ -131,7 +135,7 @@ module.exports = {
   signIn,
   changePassword,
   signOut,
-  editSymptom,
+  editSolution,
   deleteSymptom,
   newSymptom,
   getSolutions

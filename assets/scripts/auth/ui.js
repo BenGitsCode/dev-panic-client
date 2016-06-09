@@ -10,6 +10,7 @@ let currentUser = {
   username: undefined
 };
 
+// USER CRUD SUCCESSES
 const signUpSuccess = () => {
   console.log('You signed-up');
 };
@@ -31,9 +32,12 @@ const signOutSuccess = () => {
   console.log('See YA signed out');
 };
 
+// SYMPTOMS AND SOLUTIONS
+
 const newSymptomSuccess = () => {
   console.log('New Symptom Added');
   $('#new-symptom-modal').modal('hide');
+  $('.landing-header').html('hide');
 };
 
 const failure = () => {

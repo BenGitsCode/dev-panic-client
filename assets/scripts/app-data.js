@@ -1,12 +1,13 @@
 'use strict';
 
+//
 const server = {
-  api:'https://dev-panic.herokuapp.com',
+  api:'http://localhost:3000',
   };
 
   let currentUser = {
-    token:'',
-    id: undefined,
+    token: 'undefined',
+    id: '',
   };
 
 module.exports = {

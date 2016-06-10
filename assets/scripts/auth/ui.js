@@ -125,27 +125,18 @@ const showSymptoms = (success, failure) => {
 };
 
 
-let displayPasses = function(passes){
+let showCrud = function(passes){
   let passesListingTemplate = require('../templates/passes.handlebars');
   console.log("display passes");
     $('.content').append(passesListingTemplate({
       passes : passes.passes
     }));
-    //when crud panel is clicked to open edit modal
-    $('.edit-crud').on('click', function() {
-      //load clicked crud ID from data-attribute into local storage for use in auth/api.editRescue call
-      localStorage.setItem('ID', $(this).attr('data-attribute'));
-      let crud = $(this).closest('tr').children('.crud').text();
-      $('#edit-crud #inputCrud').val(crud);
-      });
-    //shows add crud modal
-    $('.open-new-crud').on('click', function(event){
-      event.preventDefault();
-      $('#newModal').modal('show');
-  });
 };
 
-
+const newPassSuccess = () => {
+  console.log('New Pass Added');
+  showCrud();
+};
 
 
 module.exports = {
@@ -165,5 +156,6 @@ module.exports = {
   getSolutionsSuccess,
   editSolutionSuccess,
   deleteSymptomSuccess,
-  displayPasses
+  displayPasses,
+  newPassSuccess
 };

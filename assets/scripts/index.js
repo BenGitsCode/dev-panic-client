@@ -72,7 +72,5 @@ $('#sign-out').on('click', function(event){
   let data = getFormFields(this);
   authApi.newPass(authUi.success, authUi.failure, data);
   console.log(data);
-  authUi.showPasses();
+  authUi.showCrud();
   });
-
-  

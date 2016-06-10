@@ -101,6 +101,7 @@ const editSolutionSuccess = () => {
 
 const deleteSymptomSuccess =() => {
   console.log("deleted");
+  display.displaySolutions(solutionData);
 };
 
 const getSolutionsSuccess = (data) => {

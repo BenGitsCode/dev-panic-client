@@ -289,7 +289,7 @@ webpackJsonp([0],[
 	//
 
 	var server = {
-	  api: 'http://localhost:3000'
+	  api: 'https://dev-panic.herokuapp.com'
 	};
 
 	var currentUser = {

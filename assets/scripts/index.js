@@ -73,4 +73,6 @@ $('#sign-out').on('click', function(event){
   authApi.newPass(authUi.success, authUi.failure, data);
   console.log(data);
   authUi.showPasses();
-});
+  });
+
+  

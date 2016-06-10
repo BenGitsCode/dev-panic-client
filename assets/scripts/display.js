@@ -32,10 +32,21 @@ let displaySolutions = function(solutions){
 };
 
 
+let showCrud = function(solutions){
+  console.log(solutions);
+    // $('.landing-div').hide(); //this hides the landing page div
+    // $('.show-solutions').html(''); //this clears the content in my table html
+  let solutionsListingTemplate = require('./templates/passes.handlebars');
+    $('.show-solutions').append(solutionsListingTemplate({
+      solutions : solutions
+    }));
+  };
+
 
 
 
 
 module.exports = {
   displaySolutions,
+  showCrud
 };

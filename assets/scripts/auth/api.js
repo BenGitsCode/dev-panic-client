@@ -123,24 +123,10 @@ const getSolutions = (success, failure, data) => {
   .fail(failure);
 };
 
-// const getSymptoms = (success, failure, data) => {
-//   $.ajax({
-//     method: "GET",
-//     url: app.server.api +'/symptoms/',
-//     dataType: 'json',
-//     headers: {
-//       Authorization: "Token token=" + app.currentUser.token
-//     },
-//   })
-//   .done(success)
-//   .fail(failure);
-// };
-
-
 // ================================================
 
 const newPass = (success, failure, data) => {
-  console.log(data);
+  debugger;
   $.ajax({
     method: "POST",
     url: app.server.api + '/passes/',
@@ -158,7 +144,7 @@ const newPass = (success, failure, data) => {
   .fail(failure);
 };
 
-const getPass = (success, failure, data) => {
+const getPass = (success, failure) => {
   $.ajax({
     method: "GET",
     url: app.server.api +'/passes/',
@@ -173,32 +159,34 @@ const getPass = (success, failure, data) => {
 
 
 const editPass = (success, failure, data, id) => {
-  $.ajax({
-    method: 'PATCH',
-    url: app.api + '/passes/' + id,
-    data,
-    headers:{
-      Authorization: "Token token=" + app.currentUser.token,
-    },
-  }).done(success)
-  .fail(failure);
-};
-
-
-
-const deletePass = (success, failure, data, id) => {
   console.log(data, id);
   $.ajax({
-    method: 'DELETE',
-    url: app.api + '/passes/' + id,
-    data,
+    method: 'PATCH',
+    url: app.server.api + '/passes/' + id,
+    data: {
+      "pass": {
+      "crud": data.pass.crud
+    }
+  },
     headers:{
       Authorization: "Token token=" + app.currentUser.token,
-    },
+    }
   }).done(success)
   .fail(failure);
 };
 
+
+
+const deletePass = (success, failure) => {
+  $.ajax({
+    method: "DELETE",
+    url: app.server.api + '/passes/' + app.currentUser.id,
+    headers: {
+      Authorization: 'Token token=' + app.currentUser.token
+    },
+  }).done(success)
+  .fail(failure);
+};
 
 
 
@@ -212,7 +200,7 @@ module.exports = {
   newSymptom,
   getSolutions,
   newPass,
-  deletePass,
-  getPass,
   editPass,
+  deletePass,
+  getPass
 };

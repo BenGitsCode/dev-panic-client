@@ -2,7 +2,7 @@
 
 const authApi = require('./auth/api');
 const authUi = require('./auth/ui');
-
+let solutionId;
 let displaySolutions = function(solutions){
   console.log(solutions);
     // $('.landing-div').hide(); //this hides the landing page div
@@ -14,13 +14,7 @@ let displaySolutions = function(solutions){
     $('.edit-solution-btn').on('click', function (event) {
       event.preventDefault();
       $('.edit-solution-modal').modal('show');
-      let solutionId = $(this).data('id');
-      $('#edit-symptom').on('submit', function(event) {
-        event.preventDefault();
-        let newSolution = getFormFields(this);
-        $('.edit-solution-modal').modal('hide');
-        authApi.editSolution(authUi.editSolutionSuccess, authUi.failure, newSolution, solutionId);
-      });
+      solutionId = $(this).data('id');
     });
       // deleteSymptom
       $('#delete-btn').on('click', function (event) {
@@ -30,8 +24,12 @@ let displaySolutions = function(solutions){
         displaySolutions();
       });
 };
-
-
+$('#edit-symptom').on('submit', function(event) {
+  event.preventDefault();
+  let newSolution = getFormFields(this);
+  $('.edit-solution-modal').modal('hide');
+  authApi.editSolution(authUi.editSolutionSuccess, authUi.failure, newSolution, solutionId);
+});
 
 
 

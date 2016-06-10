@@ -35,6 +35,22 @@ Unfortunately, I was working with an unscrupulous deadline, the wrong framework 
 1.  As a developer, I will implement CRUD functionality to allow the user to create symptoms
 2. As a user I want to be able to see all users solutions, with or without signing in
 
+## Development Issues
+
+- Starting over from scratch on day two, and then completely changing the scop of the project on the last development day were the biggest issues by far.
+- Some more specific issues that stemmed out of that as follows:
+  - Unable to get OpenReadController inheritance working properly, so that any user could see all solutions without being signed in. Largely because I had never used it before, and there is no existing documentation on it. Given more time, or clarity on the deliverables from day 1, I;m confident it would have been a non-issue.
+  - It was important to give the user a dropdown selection of premade symptoms that would properly access matching solutions from the API. Because of this, the code "getting" from the API was first posting a variable to the controller action that in turn would return the correct data to the application. This ate up some development time to fully integrate but adds the most user friendly feature thus far implemented.
+  - Ran into an issue with options method due to rack cors gem; Rack Middleware for handling Cross-Origin Resource Sharing, which makes cross-origin AJAX possible--but caused issues with the Update feature that is yet to be resolved. If given more than a day to implement that patch request, I'm confident I could. In a real world scenario I would have explained that to the client when given the new deliverables, explain why it didnt make sense for the application, and why I would never risk dirtying the database with duplicate data when in half the time taken to read this sentence, a user could be instructed to delete the object meant to be patched, and make a new one.
+
+## Future Implementations
+
+- Given the choice, I would of course not have the unnecessary crud, and instead focused on the following features:
+  - NPM CLI tool that could print solutions to the console
+  - CLI tool could potentially even authenticate to API and perform crud from there
+  - Still minimal but more powerful interface where user could access sympom solutions, and sort or browse through different types such as images and links.
+  - ability to toggle the privacy of user-created symptoms and solutions to public or private.
+
 ## Wireframe
 
 [WireFrames](http://i.imgur.com/QFNMWUe.png)

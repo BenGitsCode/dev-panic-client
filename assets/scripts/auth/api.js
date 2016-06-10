@@ -173,34 +173,32 @@ const getPass = (success, failure, data) => {
 
 
 const editPass = (success, failure, data, id) => {
-  console.log(data, id);
   $.ajax({
     method: 'PATCH',
-    url: app.server.api + '/symptoms/' + id,
-    data: {
-      "pass": {
-      "crud": data.pass.crud
-    }
-  },
+    url: app.api + '/passes/' + id,
+    data,
     headers:{
       Authorization: "Token token=" + app.currentUser.token,
-    }
-  }).done(success)
-  .fail(failure);
-};
-
-
-
-const deletePass = (success, failure) => {
-  $.ajax({
-    method: "DELETE",
-    url: app.server.api + '/passes/' + app.currentUser.id,
-    headers: {
-      Authorization: 'Token token=' + app.currentUser.token
     },
   }).done(success)
   .fail(failure);
 };
+
+
+
+const deletePass = (success, failure, data, id) => {
+  console.log(data, id);
+  $.ajax({
+    method: 'DELETE',
+    url: app.api + '/passes/' + id,
+    data,
+    headers:{
+      Authorization: "Token token=" + app.currentUser.token,
+    },
+  }).done(success)
+  .fail(failure);
+};
+
 
 
 

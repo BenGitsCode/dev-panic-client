@@ -63,3 +63,14 @@ $('#sign-out').on('click', function(event){
     authApi.getSolutions(authUi.getSolutionsSuccess, authUi.failure, title);
     console.log(title);
   });
+
+
+
+  // CRUD CRUD
+  $('#new-crud').on('submit', function (event) {
+  event.preventDefault();
+  let data = getFormFields(this);
+  authApi.newPass(authUi.success, authUi.failure, data);
+  console.log(data);
+  authUi.showPasses();
+});

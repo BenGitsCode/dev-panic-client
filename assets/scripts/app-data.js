@@ -2,7 +2,7 @@
 
 //
 const server = {
-  api:'https://dev-panic.herokuapp.com',
+  api:'http://localhost:3000',
   };
 
   let currentUser = {

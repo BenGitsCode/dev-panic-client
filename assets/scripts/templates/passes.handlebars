@@ -1,0 +1,18 @@
+<tr class="table-top-row">
+  <td><b>CRUD</b></td>
+
+</tr>
+<tr class="table-top-row">
+{{#each passes}}
+    <div class="show-crud">
+  {{this.crud}}
+  <td class="crud-title">{{this.title}}</td>
+  <td><button type="button"  class="btn btn-primary edit-crud" data-crud-id="{{id}}" data-toggle="modal" data-target="#edit-crud-modal">Update</button></td>
+  <td><button type="button"  class="btn btn-danger delete-crud" data-crud-id="{{id}}" data-toggle="modal" data-target="#delete-crud-modal">Delete</button></td>
+    </div>
+</tr>
+{{/each}}
+
+  {{#each crud}}
+    <h1>{{this}}</h1>
+  {{/each}}

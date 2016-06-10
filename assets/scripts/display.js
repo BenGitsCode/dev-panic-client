@@ -28,7 +28,7 @@ $('#edit-symptom').on('submit', function(event) {
   event.preventDefault();
   let newSolution = getFormFields(this);
   $('.edit-solution-modal').modal('hide');
-  authApi.editSolution(authUi.editSolutionSuccess, authUieditSolutionSuccess.failure, newSolution, solutionId);
+  authApi.editSolution(authUi.editSolutionSuccess, authUi.editSolutionFailure, newSolution, solutionId);
 });
 
 

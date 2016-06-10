@@ -97,6 +97,7 @@ const showSymptomsSuccess = (data) => {
 const editSolutionSuccess = () => {
   console.log("edited success");
   $('#edit-symptom-modal').modal('hide');
+  
 };
 
 

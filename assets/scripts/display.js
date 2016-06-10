@@ -22,7 +22,14 @@ let displaySolutions = function(solutions){
         authApi.editSolution(authUi.editSolutionSuccess, authUi.failure, newSolution, solutionId);
       });
     });
-  };
+      // deleteSymptom
+      $('#delete-btn').on('click', function (event) {
+        debugger;
+        event.preventDefault();
+        let solutionId = $(this).data('id');
+        authApi.deleteSymptom(authUi.deleteSymptomSuccess, authUi.failure, solutionId);
+      });
+};
 
 
 

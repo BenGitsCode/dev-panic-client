@@ -96,12 +96,10 @@ const editSolution = (success, failure, data, id) => {
 };
 
 //DELETE Symptoms
-const deleteSymptom = (success, failure, data, id) => {
-  console.log(data, id);
+const deleteSymptom = (success, failure, id) => {
   $.ajax({
     method: 'DELETE',
     url: app.server.api + '/symptoms/' + id,
-    data,
     headers:{
       Authorization: "Token token=" + app.currentUser.token,
     },

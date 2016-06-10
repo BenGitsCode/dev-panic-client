@@ -96,8 +96,8 @@ const editSolutionSuccess = () => {
   console.log("edited success");
 };
 
-const deleteSymptomSuccess = (data) => {
-  console.log(data);
+const deleteSymptomSuccess = () => {
+  console.log("deleted");
 };
 
 

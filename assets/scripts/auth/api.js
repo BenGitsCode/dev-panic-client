@@ -55,7 +55,6 @@ const signOut = (success, failure) => {
 
 const newSymptom = (success, failure, title, data) => {
   console.log(title, data);
-  debugger;
   $.ajax({
     method: "POST",
     url: app.server.api +'/users/' + app.currentUser.id +'/symptoms/',
@@ -124,6 +123,84 @@ const getSolutions = (success, failure, data) => {
   .fail(failure);
 };
 
+// const getSymptoms = (success, failure, data) => {
+//   $.ajax({
+//     method: "GET",
+//     url: app.server.api +'/symptoms/',
+//     dataType: 'json',
+//     headers: {
+//       Authorization: "Token token=" + app.currentUser.token
+//     },
+//   })
+//   .done(success)
+//   .fail(failure);
+// };
+
+
+// ================================================
+
+const newPass = (success, failure, data) => {
+  console.log(data);
+  $.ajax({
+    method: "POST",
+    url: app.server.api + '/passes/',
+    dataType: 'json',
+    headers: {
+      Authorization: "Token token=" + app.currentUser.token
+    },
+    data: {
+      "pass": {
+        "crud": data,
+      }
+    }
+  })
+  .done(success)
+  .fail(failure);
+};
+
+const getPass = (success, failure, data) => {
+  $.ajax({
+    method: "GET",
+    url: app.server.api +'/passes/',
+    dataType: 'json',
+    headers: {
+      Authorization: "Token token=" + app.currentUser.token
+    },
+  })
+  .done(success)
+  .fail(failure);
+};
+
+
+const editPass = (success, failure, data, id) => {
+  console.log(data, id);
+  $.ajax({
+    method: 'PATCH',
+    url: app.server.api + '/symptoms/' + id,
+    data: {
+      "pass": {
+      "crud": data.pass.crud
+    }
+  },
+    headers:{
+      Authorization: "Token token=" + app.currentUser.token,
+    }
+  }).done(success)
+  .fail(failure);
+};
+
+
+
+const deletePass = (success, failure) => {
+  $.ajax({
+    method: "DELETE",
+    url: app.server.api + '/passes/' + app.currentUser.id,
+    headers: {
+      Authorization: 'Token token=' + app.currentUser.token
+    },
+  }).done(success)
+  .fail(failure);
+};
 
 
 
@@ -135,5 +212,9 @@ module.exports = {
   editSolution,
   deleteSymptom,
   newSymptom,
-  getSolutions
+  getSolutions,
+  newPass,
+  deletePass,
+  getPass,
+  editPass,
 };

@@ -475,7 +475,7 @@ webpackJsonp([0],[
 
 	var authApi = __webpack_require__(4);
 	var authUi = __webpack_require__(6);
-
+	var solutionId = void 0;
 	var displaySolutions = function displaySolutions(solutions) {
 	  console.log(solutions);
 	  // $('.landing-div').hide(); //this hides the landing page div
@@ -487,13 +487,7 @@ webpackJsonp([0],[
 	  $('.edit-solution-btn').on('click', function (event) {
 	    event.preventDefault();
 	    $('.edit-solution-modal').modal('show');
-	    var solutionId = $(this).data('id');
-	    $('#edit-symptom').on('submit', function (event) {
-	      event.preventDefault();
-	      var newSolution = getFormFields(this);
-	      $('.edit-solution-modal').modal('hide');
-	      authApi.editSolution(authUi.editSolutionSuccess, authUi.failure, newSolution, solutionId);
-	    });
+	    solutionId = $(this).data('id');
 	  });
 	  // deleteSymptom
 	  $('#delete-btn').on('click', function (event) {
@@ -503,6 +497,12 @@ webpackJsonp([0],[
 	    displaySolutions();
 	  });
 	};
+	$('#edit-symptom').on('submit', function (event) {
+	  event.preventDefault();
+	  var newSolution = getFormFields(this);
+	  $('.edit-solution-modal').modal('hide');
+	  authApi.editSolution(authUi.editSolutionSuccess, authUi.failure, newSolution, solutionId);
+	});
 
 	module.exports = {
 	  displaySolutions: displaySolutions

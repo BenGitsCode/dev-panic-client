@@ -129,14 +129,22 @@ let showCrud = function(passes){
   let passesListingTemplate = require('../templates/passes.handlebars');
   console.log("display passes");
     $('.content').append(passesListingTemplate({
-      passes : passes.passes
+      passes : passes.crud
     }));
 };
 
+$('#get-crud-btn').on('click', function (event) {
+  event.preventDefault();
+  debugger;
+  authApi.getPass(success, failure);
+  showCrud();
+});
+
 const newPassSuccess = () => {
   console.log('New Pass Added');
-  showCrud();
+  authApi.getPass();
 };
+
 
 
 module.exports = {
@@ -156,6 +164,5 @@ module.exports = {
   getSolutionsSuccess,
   editSolutionSuccess,
   deleteSymptomSuccess,
-  displayPasses,
   newPassSuccess
 };

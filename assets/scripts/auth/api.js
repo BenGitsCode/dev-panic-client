@@ -144,7 +144,6 @@ const newPass = (success, failure, data) => {
 };
 
 const getPass = (success, failure) => {
-  debugger;
   $.ajax({
     method: "GET",
     url: app.server.api +'/passes/',

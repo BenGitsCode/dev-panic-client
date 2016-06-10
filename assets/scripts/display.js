@@ -27,6 +27,7 @@ let displaySolutions = function(solutions){
         event.preventDefault();
         let solutionId = $(this).data('id');
         authApi.deleteSymptom(authUi.deleteSymptomSuccess, authUi.failure, solutionId);
+        displaySolutions();
       });
 };
 

@@ -82,6 +82,7 @@ const newSymptomSuccess = () => {
   console.log('New Symptom Added');
   $('#new-symptom-modal').modal('hide');
   $('.landing-header').html('hide');
+  display.displaySolutions();
 };
 
 const failure = () => {
@@ -96,10 +97,10 @@ const editSolutionSuccess = () => {
   console.log("edited success");
 };
 
-const deleteSymptomSuccess = () => {
+
+const deleteSymptomSuccess =() => {
   console.log("deleted");
 };
-
 
 const getSolutionsSuccess = (data) => {
   let solutionData = data.symptoms;

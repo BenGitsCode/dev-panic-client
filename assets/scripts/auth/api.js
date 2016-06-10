@@ -53,7 +53,9 @@ const signOut = (success, failure) => {
 
 // SYMPTOMS AJAX
 
-const newSymptom = (success, failure, data) => {
+const newSymptom = (success, failure, title, data) => {
+  console.log(title, data);
+  debugger;
   $.ajax({
     method: "POST",
     url: app.server.api +'/users/' + app.currentUser.id +'/symptoms/',
@@ -63,11 +65,8 @@ const newSymptom = (success, failure, data) => {
     },
     data: {
       "symptom": {
-        "title": data.symptom.title,
-        "solution": data.symptom.solution,
-        "url": data.symptom.url,
-        "media": data.symptom.media,
-        "private": data.symptom.private,
+        "title": data,
+        "solution": title.symptom.solution,
       }
     }
   })

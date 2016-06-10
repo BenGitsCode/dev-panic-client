@@ -48,10 +48,12 @@ $('#sign-out').on('click', function(event){
   });
 
   $('#new-symptom').on('submit', function (event) {
+    console.log("test");
     event.preventDefault();
+    let title = $('#symptom-select option:selected').text();
     let data = getFormFields(this);
-    authApi.newSymptom(authUi.newSymptomSuccess, authUi.failure, data);
-    console.log(data);
+    console.log("submit");
+    authApi.newSymptom(authUi.newSymptomSuccess, authUi.failure, data, title);
   });
 
   // sets the title to be called from API
